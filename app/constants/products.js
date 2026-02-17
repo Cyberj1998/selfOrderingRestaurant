@@ -16,7 +16,7 @@
 categorias
 
 -vevidas
--completas
+-completa
 -pizza
 -hamburguesas
 -postres
