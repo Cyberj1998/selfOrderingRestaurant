@@ -17,7 +17,7 @@ const ProductCart = ({ product }) => {
             <h3 className="text-[#2a2828] text-[20px] max-md:text-[15px] font-semibold ml-2">
               $: {product.price}
             </h3>
-            <button className="bg-linear-to-r from-[#0e9753] to-[#59e1a9] h-12.5 max-md:h-10 w-40 max-md:w-30 rounded-3xl cursor-pointer flex flex-row justify-center items-center">
+            <button className="bg-linear-to-r from-[#0e9753] to-[#59e1a9] mr-1 h-12.5 max-md:h-10 w-40 max-md:w-30 rounded-3xl cursor-pointer flex flex-row justify-center items-center">
               <p className="text-[15px] max-md:text-[12px] font-semibold text-white">
                 Anadir al carrito
               </p>

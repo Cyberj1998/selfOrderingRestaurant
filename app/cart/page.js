@@ -1,12 +1,18 @@
-
+import CartNavBar from "../components/CartNavBar"
+import CartCard from "../components/CartCard"
 
 const page = () => {
   return (
-    <div className="h-screen w-full flex justify-center items-center">
-      <p>
-        this is the cart section
-      </p>
-    </div>
+    <>
+      <CartNavBar />
+      <div className="h-fit w-full flex flex-col justify-start items-center bg-[#2a2828]">
+        <CartCard />
+        <CartCard />
+        <CartCard />
+        <CartCard />
+        <CartCard />
+      </div>
+    </>
   )
 }
 
