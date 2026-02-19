@@ -1,7 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-const CartNavBar = () => {
+const CartNavBar = ({ setModal }) => {
+
+  const handleModal = () => {
+    setModal(prev=>!prev)
+  }
+
   return (
     <div className='h-12.5 w-full bg-[#2a2828] flex flex-row justify-between items-center'>
       <Link
@@ -18,13 +23,17 @@ const CartNavBar = () => {
       <h3 className='text-[20px] text-white font-semibold'>
         Mi Carrito
       </h3>
-      <Image 
-        src='/images/cart.png'
-        alt='cart icon'
-        height={10}
-        width={10}
-        className='h-10 w-10 cursor-pointer mr-5'
-      />
+      <button
+        onClick={()=>handleModal()}
+      >
+        <Image 
+          src='/images/cart.png'
+          alt='cart icon'
+          height={10}
+          width={10}
+          className='h-10 w-10 cursor-pointer mr-5'
+        />
+      </button>
     </div>
   )
 }
