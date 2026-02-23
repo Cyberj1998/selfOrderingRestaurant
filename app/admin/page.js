@@ -2,7 +2,7 @@
 import FormInsert from "../components/FormInsert";
 import FormUpdate from "../components/FormUpdate";
 import FormDelete from "../components/FormDelete";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 const methods = [
   { key: "insert", label: "Insert" },
@@ -11,16 +11,34 @@ const methods = [
 ];
 
 const page = () => {
+
+  //----------------------getch all the products
+  const[items,setItems]=useState([])
+  
+  useEffect(() => {
+    fetch('http://localhost:3001/items')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Error en la respuesta de la API');
+      }
+      return response.json();
+    })
+    .then(data => setItems(data))
+    .catch(error => console.error('Error al llamar al endpoint:', error));
+  }, []);
+  
+
+
   const [activeMethod, setActiveMethod] = useState("insert");
 
-  const renderForm = () => {
+  const renderForm = (items) => {
     switch (activeMethod) {
       case "insert":
         return <FormInsert />;
       case "update":
-        return <FormUpdate />;
+        return <FormUpdate items={items} />;
       case "delete":
-        return <FormDelete />;
+        return <FormDelete items={items} />;
       default:
         return null;
     }
@@ -46,7 +64,7 @@ const page = () => {
         ))}
       </div>
 
-      {renderForm()}
+      {renderForm(items)}
     </div>
   );
 };

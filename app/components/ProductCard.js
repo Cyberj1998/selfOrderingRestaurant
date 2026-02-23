@@ -1,7 +1,7 @@
 import Image from "next/image"
 import useCartStore from "../store/CartSlice"
 
-const ProductCart = ({ product }) => {
+const ProductCard = ({ product }) => {
 
   const addToCart = useCartStore(state=>state.addToCart)
 
@@ -46,4 +46,4 @@ const ProductCart = ({ product }) => {
   )
 }
 
-export default ProductCart
+export default ProductCard

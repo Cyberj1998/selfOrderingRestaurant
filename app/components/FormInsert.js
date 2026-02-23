@@ -106,7 +106,7 @@ const FormInsert = () => {
 
         <button 
           onClick={(e)=>handleSaveProduct(e)}
-          className="mt-4 bg-indigo-600 text-white py-2 rounded-lg font-semibold hover:bg-indigo-700 transition"
+          className="mt-4 bg-indigo-600 cursor-pointer text-white py-2 rounded-lg font-semibold hover:bg-indigo-700 transition"
         >
           Guardar Producto
         </button>
