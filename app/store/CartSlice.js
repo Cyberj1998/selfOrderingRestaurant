@@ -60,7 +60,13 @@ const useCartStore = create((set, get)=>({
 
     getTotalPrice: () => {
         return get().cart.reduce((total, product)=>total + product.price * product.quantity, 0)
-    }
+    },
+
+    //-----------------clean cart
+
+    clearCart: () => set(
+        { cart: [] }
+    ),
 
 }))
 

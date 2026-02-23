@@ -9,6 +9,7 @@ const page = () => {
 
   const cart = useCartStore(state=>state.cart)
   const getTotalPrice = useCartStore(state=>state.getTotalPrice)
+  const clearCart = useCartStore(state => state.clearCart);
 
   const[totalPrice,setTotalPrice]=useState(0)
   const[modal,setModal]=useState(false)
@@ -20,6 +21,11 @@ const page = () => {
   };
 
   const handleModal = () => {
+    setModal(prev=>!prev)
+  }
+
+  const handleCleanCart = () => {
+    clearCart()
     setModal(prev=>!prev)
   }
 
@@ -62,7 +68,10 @@ const page = () => {
                 </select>
               </div>
               <p className="text-[#bfbfbf] text-[20px] font-semibold">Mesa seleccionada: {selectedNumber}</p>
-              <button className="bg-linear-to-r from-[#0e9753] to-[#59e1a9] mr-1 h-12.5 max-md:h-10 w-40 max-md:w-30 rounded-3xl cursor-pointer flex flex-row justify-center items-center">
+              <button 
+                onClick={()=>handleCleanCart()}
+                className="bg-linear-to-r from-[#0e9753] to-[#59e1a9] mr-1 h-12.5 max-md:h-10 w-40 max-md:w-30 rounded-3xl cursor-pointer flex flex-row justify-center items-center"
+              >
                 <p className="text-[20px] text-white font-semibold m-2">ordenar</p>
                 <Image 
                   src='/images/cart.png'
