@@ -12,6 +12,33 @@ const FormUpdate = ({ items }) => {
     console.log(items)
   },[])
 
+  
+  const handleSaveProduct = async () => {
+    try {
+      const response = await fetch(`http://localhost:3001/items/${id}/price`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ price }) 
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        alert(`Error: ${data.error}`)
+        return
+      }
+
+      alert(data.message) 
+      console.log('Producto actualizado:', data.product)
+
+    } catch (error) {
+      console.error('Error al actualizar el precio:', error)
+    }
+  }
+
+
   return (
     <div className='bg-white p-2 rounded-2xl shadow-lg w-[90%] max-md:w-full flex flex-row max-md:flex-col justify-center items-centers'>
       
@@ -49,7 +76,7 @@ const FormUpdate = ({ items }) => {
         />
 
         <button 
-          onClick={(e)=>handleSaveProduct(e)}
+          onClick={()=>handleSaveProduct()}
           className="mt-4 bg-indigo-600 p-2 text-white py-2 cursor-pointer rounded-lg font-semibold hover:bg-indigo-700 transition"
         >
           Guardar nuevo precio
