@@ -29,8 +29,37 @@ const page = () => {
     setModal(prev=>!prev)
   }
 
+  const handleSendOrder = async () => {
+
+    const nuevoPedido = {
+      total: totalPrice,
+      mesa: selectedNumber,
+      orden: JSON.stringify(cart)
+    };
+
+    try {
+      const res = await fetch('http://localhost:3001/insertorder', { 
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(nuevoPedido)
+      });
+
+      if (!res.ok) throw new Error('Error al enviar orden');
+
+      const data = await res.json();
+      handleCleanCart()
+      alert('Orden creada con id: ' + data.id);
+    } catch (error) {
+      console.error(error);
+      alert('Error: ' + error.message);
+    }
+  }
+
   useEffect(()=>{
     setTotalPrice(getTotalPrice)
+    console.log(cart)
   },[modal])
 
 
@@ -69,7 +98,7 @@ const page = () => {
               </div>
               <p className="text-[#bfbfbf] text-[20px] font-semibold">Mesa seleccionada: {selectedNumber}</p>
               <button 
-                onClick={()=>handleCleanCart()}
+                onClick={()=>handleSendOrder()}
                 className="bg-linear-to-r from-[#0e9753] to-[#59e1a9] mr-1 h-12.5 max-md:h-10 w-40 max-md:w-30 rounded-3xl cursor-pointer flex flex-row justify-center items-center"
               >
                 <p className="text-[20px] text-white font-semibold m-2">ordenar</p>

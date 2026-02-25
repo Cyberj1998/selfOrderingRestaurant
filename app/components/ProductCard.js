@@ -10,17 +10,17 @@ const ProductCard = ({ product }) => {
   }
 
   return (
-    <div className="bg-white h-65 max-md:-60 w-65 max-md:w-55 rounded-2xl shrink-0 m-2 relative flex justify-center items-center mt-20">
+    <div className="bg-white z-10 h-65 max-md:-60 w-65 max-md:w-55 rounded-2xl shrink-0 m-2 relative flex justify-center items-center mt-20">
       <Image 
         src={`${product.image}`}
         alt="product image"
         height={50}
-        width={50}
-        className="h-50 max-md:h-40 w-50 max-md:w-40 absolute -top-20 max-md:-top-10"
+        width={product.category === 'vevidas' ? 160 : 190}
+        className="max-md:h-40 max-md:w-40 absolute -top-20 max-md:-top-10"
       />
       <div className="h-full w-full flex justify-center items-end">
         <div className="h-25 w-full flex flex-col">
-          <h3 className="text-[#2a2828] text-[20px] font-semibold ml-2">{product.name}</h3>
+          <h3 className="text-[#2a2828] text-[20px] font-semibold ml-2">{product.nombre}</h3>
           <div className="h-fit w-full flex flex-row justify-between items-center">
             <h3 className="text-[#2a2828] text-[20px] max-md:text-[15px] font-semibold ml-2">
               $: {product.price}
