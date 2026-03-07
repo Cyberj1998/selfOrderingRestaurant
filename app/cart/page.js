@@ -29,6 +29,26 @@ const page = () => {
     setModal(prev=>!prev)
   }
 
+  const handleShareToWhatsApp = () => {
+    
+    const phoneNumber = '50219524'; 
+    
+    const messageItems = cart.map(item => {
+        return `${item.name}, Precio: ${item.price}, Cantidad: ${item.quantity}`;
+    }).join('\n');
+
+    const message = `${messageItems}\nTotal a pagar: ${totalPrice},  Mesa: ${selectedNumber}`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+    window.open(whatsappUrl, '_blank');
+  };
+
+  const handleSendWhatsAppOrder = () => {
+    handleShareToWhatsApp()
+    handleCleanCart()
+  }
+
   const handleSendOrder = async () => {
 
     const nuevoPedido = {
@@ -98,7 +118,7 @@ const page = () => {
               </div>
               <p className="text-[#bfbfbf] text-[20px] font-semibold">Mesa seleccionada: {selectedNumber}</p>
               <button 
-                onClick={()=>handleSendOrder()}
+                onClick={()=>handleSendWhatsAppOrder()}
                 className="bg-linear-to-r from-[#0e9753] to-[#59e1a9] mr-1 h-12.5 max-md:h-10 w-40 max-md:w-30 rounded-3xl cursor-pointer flex flex-row justify-center items-center"
               >
                 <p className="text-[20px] text-white font-semibold m-2">ordenar</p>

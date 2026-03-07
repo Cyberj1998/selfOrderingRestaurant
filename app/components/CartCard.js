@@ -46,7 +46,7 @@ const CartCard = ({ product }) => {
             onClick={()=>handleRemove(product.id)}
           >
             <Image 
-              src='/images/trash.svg'
+              src='/images/trash.png'
               alt="delete icon"
               height={30}
               width={30}
@@ -68,7 +68,7 @@ const CartCard = ({ product }) => {
                 alt="left icon"
                 height={60}
                 width={60}
-                className="m-2s cursor-pointer"
+                className="m-2s cursor-pointer rotate-180"
               />
             </button>
             <p className="text-[#c3c3c3] font-semibold text-[25px] max-md:text-[15px] m-2">

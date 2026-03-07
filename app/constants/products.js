@@ -23,91 +23,176 @@ categorias
 
 */
 
+
 const products = [
-    {
-      id: 0,
-      name: 'cerveza ejemplo',
-      price: 500,
-      category: 'vevidas',
-      image: '/images/producto-Cerveza.png'
-    },
-    {
-      id: 1,
-      name: 'completa ejemplo 1',
-      price: 1500,
-      category: 'completa',
-      image: '/images/meal-1.png'
-    },
-    {
-      id: 2,
-      name: 'completa ejemplo 2',
-      price: 2000,
-      category: 'completa',
-      image: '/images/meal-2.png'
-    },
-    {
-      id: 3,
-      name: 'completa ejemplo 3',
-      price: 1800,
-      category: 'completa',
-      image: '/images/meal-3.png'
-    },
-    {
-      id: 4,
-      name: 'completa ejemplo 4',
-      price: 1000,
-      category: 'completa',
-      image: '/images/meal-4.png'
-    },
-    {
-      id: 5,
-      name: 'completa ejemplo 5',
-      price: 1200,
-      category: 'completa',
-      image: '/images/meal-5.png'
-    },
-    {
-      id: 6,
-      name: 'completa ejemplo 6',
-      price: 800,
-      category: 'completa',
-      image: '/images/meal-6.png'
-    },
-    {
-      id: 7,
-      name: 'completa ejemplo 7',
-      price: 600,
-      category: 'completa',
-      image: '/images/meal-7.png'
-    },
-    {
-      id: 8,
-      name: 'pizza ejemplo 1',
-      price: 170,
-      category: 'pizza',
-      image: '/images/pizza-1.png'
-    },
-    {
-      id: 9,
-      name: 'pizza ejemplo 2',
-      price: 200,
-      category: 'pizza',
-      image: '/images/pizza-2.png'
-    },
-    {
-      id: 10,
-      name: 'pizza ejemplo 3',
-      price: 180,
-      category: 'pizza',
-      image: '/images/pizza-3.png'
-    },
-    {
-      id: 11,
-      name: 'pizza ejemplo 4',
-      price: 250,
-      category: 'pizza',
-      image: '/images/pizza-4.png'
-    },
-]
+  {
+    id: 30,
+    name: 'bebida 1',
+    price: 500,
+    category: 'bebida',
+    image: '/images/bebida-1.png'
+  },
+  {
+    id: 31,
+    name: 'bebida 2',
+    price: 550,
+    category: 'bebida',
+    image: '/images/bebida-2.png'
+  },
+  {
+    id: 32,
+    name: 'bebida 3',
+    price: 250,
+    category: 'bebida',
+    image: '/images/bebida-3.png'
+  },
+  {
+    id: 33,
+    name: 'hamburguesa 1',
+    price: 500,
+    category: 'hamburguesa',
+    image: '/images/hamburguesa-1.png'
+  },
+  {
+    id: 34,
+    name: 'hamburguesa 2',
+    price: 600,
+    category: 'hamburguesa',
+    image: '/images/hamburguesa-2.png'
+  },
+  {
+    id: 35,
+    name: 'hamburguesa',
+    price: 550,
+    category: 'hamburguesa',
+    image: '/images/hamburguesa-3.png'
+  },
+  {
+    id: 36,
+    name: 'pizza 1',
+    price: 200,
+    category: 'pizza',
+    image: '/images/pizza-1.png'
+  },
+  {
+    id: 37,
+    name: 'pizza 2',
+    price: 250,
+    category: 'pizza',
+    image: '/images/pizza-2.png'
+  },
+  {
+    id: 38,
+    name: 'pizza 3',
+    price: 180,
+    category: 'pizza',
+    image: '/images/pizza-3.png'
+  },
+  {
+    id: 39,
+    name: 'pizza 4',
+    price: 190,
+    category: 'pizza',
+    image: '/images/pizza-4.png'
+  },
+  {
+    id: 40,
+    name: 'postre 1',
+    price: 200,
+    category: 'postre',
+    image: '/images/postre-1.png'
+  },
+  {
+    id: 41,
+    name: 'postre 2',
+    price: 500,
+    category: 'postre',
+    image: '/images/postre-2.png'
+  },
+  {
+    id: 42,
+    name: 'postre 3',
+    price: 250,
+    category: 'postre',
+    image: '/images/postre-3.png'
+  },
+  {
+    id: 43,
+    name: 'postre 4',
+    price: 300,
+    category: 'postre',
+    image: '/images/postre-4.png'
+  },
+  {
+    id: 44,
+    name: 'postre 5',
+    price: 240,
+    category: 'postre',
+    image: '/images/postre-5.png'
+  },
+  {
+    id: 45,
+    name: 'postre 6',
+    price: 500,
+    category: 'postre',
+    image: '/images/postre-6.png'
+  },
+  {
+    id: 46,
+    name: 'completa 1',
+    price: 500,
+    category: 'completa',
+    image: '/images/completa-1.png'
+  },
+  {
+    id: 47,
+    name: 'completa 2',
+    price: 1000,
+    category: 'completa',
+    image: '/images/completa-2.png'
+  },
+  {
+    id: 48,
+    name: 'completa 3',
+    price: 2000,
+    category: 'completa',
+    image: '/images/completa-3.png'
+  },
+  {
+    id: 49,
+    name: 'completa 4',
+    price: 2000,
+    category: 'completa',
+    image: '/images/completa-4.png'
+  },
+  {
+    id: 50,
+    name: 'completa 5',
+    price: 5000,
+    category: 'completa',
+    image: '/images/completa-5.png'
+  },
+  {
+    id: 51,
+    name: 'completa 6',
+    price: 4000,
+    category: 'completa',
+    image: '/images/completa-6.png'
+  },
+  {
+    id: 52,
+    name: 'completa 7',
+    price: 4500,
+    category: 'completa',
+    image: '/images/completa-7.png'
+  },
+  {
+    id: 53,
+    name: 'completa 8',
+    price: 4000,
+    category: 'completa',
+    image: '/images/completa-3.png'
+  },
+];
 
 export default products

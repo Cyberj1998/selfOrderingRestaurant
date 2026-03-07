@@ -12,7 +12,7 @@ const LoadingScreen = () => {
           height={120}
           width={120}
         />
-        <p className='text-[30px] font-semibold'>
+        <p className='text-[30px] font-semibold' style={{ fontFamily: 'Pangolin' }}>
           restaur<span className='text-[#20860e]'>ante</span>
         </p>
       </div>

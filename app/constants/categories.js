@@ -3,12 +3,12 @@
 const categories = [
     {
       id: 0,
-      name: 'vevidas',
+      name: 'bebida',
       image: '/images/vevidas.svg',
     },
     {
       id: 1,
-      name: 'hamburguesas',
+      name: 'hamburguesa',
       image: '/images/hamburguesas.svg',
     },
     {
@@ -23,7 +23,7 @@ const categories = [
     },
     {
       id: 4,
-      name: 'postres',
+      name: 'postre',
       image: '/images/postre.svg',
     },
 ]

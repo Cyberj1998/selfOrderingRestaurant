@@ -4,20 +4,20 @@ import { useState } from "react";
 const FormInsert = () => {
 
   const[nombre,setNombre]=useState('')
-  const[price,setPrecio]=useState(0)
+  const[price,setPrecio]=useState('')
   const[category, setCategoria]=useState('completa');
   const[image,setImagen]=useState('')
 
   const handleCleamForm = () => {
     setNombre('')
-    setPrecio()
-    setCategoria('')
+    setPrecio('')
+    setCategoria('completa')
     setImagen('')
   }
 
   const handleSaveProduct = async (e) => {
     e.preventDefault()
-    const nuevoProducto = { nombre, price, category, image }
+    const nuevoProducto = { nombre, price: price === '' ? 0 : Number(price), category, image }
 
     try {
       const response = await fetch('http://localhost:3001/insert', {
@@ -79,13 +79,13 @@ const FormInsert = () => {
             name="categoria"
             value={category}
             onChange={e => setCategoria(e.target.value)}
-            className="border border-gray-300 rounded-md px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="border border-gray-300 rounded-md px-3 py-2 uppercase bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
-            <option value="completa">Completa</option>
-            <option value="pizza">Pizza</option>
+            <option value="completa">completa</option>
+            <option value="pizza">pizza</option>
             <option value="bebida">Bebida</option>
-            <option value="postres">Postres</option>
-            <option value="hamburguesas">Hamburguesas</option>
+            <option value="postre">postre</option>
+            <option value="hamburguesa">hamburguesa</option>
           </select>
         </div>
 

@@ -11,6 +11,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className="bg-white z-10 h-65 max-md:-60 w-65 max-md:w-55 rounded-2xl shrink-0 m-2 relative flex justify-center items-center mt-20">
+      <h3 className="absolute text-center text-[40px] top-6 -rotate-7 opacity-35 font-extrabold text-[#59e1a9]" style={{ fontFamily: 'Pangolin' }}>Nombre <br/> Restaurant</h3>
       <Image 
         src={`${product.image}`}
         alt="product image"

@@ -49,7 +49,7 @@ const ShopSelector = ({ category }) => {
   return (
     <div className="relative border-2 border-[#353434] w-[85%] rounded-2xl flex flex-wrap justify-center max-md:justify-start max-md:flex-nowrap max-md:overflow-x-scroll max-md:h-fit">
       {
-        items.map((product)=> category === product.category ? (
+        products.map((product)=> category === product.category ? (
           <ProductCard 
             key={product.id}
             product={product}

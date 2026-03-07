@@ -17,7 +17,7 @@ const CartNavBar = ({ setModal }) => {
           alt='back icon'
           height={10}
           width={10}
-          className='h-10 w-10 cursor-pointer ml-5'
+          className='h-10 w-10 cursor-pointer ml-5 rotate-180'
         />
       </Link>
       <h3 className='text-[20px] text-white font-semibold'>
