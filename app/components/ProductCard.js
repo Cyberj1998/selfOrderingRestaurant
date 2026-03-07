@@ -21,7 +21,7 @@ const ProductCard = ({ product }) => {
       />
       <div className="h-full w-full flex justify-center items-end">
         <div className="h-25 w-full flex flex-col">
-          <h3 className="text-[#2a2828] text-[20px] font-semibold ml-2">{product.nombre}</h3>
+          <h3 className="text-[#2a2828] text-[20px] font-semibold ml-2">{product.name}</h3>
           <div className="h-fit w-full flex flex-row justify-between items-center">
             <h3 className="text-[#2a2828] text-[20px] max-md:text-[15px] font-semibold ml-2">
               $: {product.price}
